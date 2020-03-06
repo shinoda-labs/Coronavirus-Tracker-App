@@ -26,6 +26,25 @@ mixin _$CasesController on _CasesControllerBase, Store {
     }, _$listCasesAtom, name: '${_$listCasesAtom.name}_set');
   }
 
+  final _$listCasesSuspectedAtom =
+      Atom(name: '_CasesControllerBase.listCasesSuspected');
+
+  @override
+  ObservableList<CasesSuspected> get listCasesSuspected {
+    _$listCasesSuspectedAtom.context
+        .enforceReadPolicy(_$listCasesSuspectedAtom);
+    _$listCasesSuspectedAtom.reportObserved();
+    return super.listCasesSuspected;
+  }
+
+  @override
+  set listCasesSuspected(ObservableList<CasesSuspected> value) {
+    _$listCasesSuspectedAtom.context.conditionallyRunInAction(() {
+      super.listCasesSuspected = value;
+      _$listCasesSuspectedAtom.reportChanged();
+    }, _$listCasesSuspectedAtom, name: '${_$listCasesSuspectedAtom.name}_set');
+  }
+
   final _$loadCasesAsyncAction = AsyncAction('loadCases');
 
   @override
@@ -33,9 +52,18 @@ mixin _$CasesController on _CasesControllerBase, Store {
     return _$loadCasesAsyncAction.run(() => super.loadCases());
   }
 
+  final _$loadCasesSuspectedAsyncAction = AsyncAction('loadCasesSuspected');
+
+  @override
+  Future loadCasesSuspected() {
+    return _$loadCasesSuspectedAsyncAction
+        .run(() => super.loadCasesSuspected());
+  }
+
   @override
   String toString() {
-    final string = 'listCases: ${listCases.toString()}';
+    final string =
+        'listCases: ${listCases.toString()},listCasesSuspected: ${listCasesSuspected.toString()}';
     return '{$string}';
   }
 }
