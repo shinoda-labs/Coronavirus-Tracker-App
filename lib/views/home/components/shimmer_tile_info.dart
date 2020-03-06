@@ -28,9 +28,6 @@ class ShimmerTileInfo extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      color: ColorsConstants.isDark
-          ? ColorsConstants.darkPrimary
-          : ColorsConstants.lightPrimary,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

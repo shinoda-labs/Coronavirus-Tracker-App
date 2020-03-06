@@ -13,10 +13,7 @@ class CasesRepository implements ICasesRepository {
       final response = await http.get(ApiConstants.casesUrl, headers: {'Authorization': ApiConstants.apiToken});
       if (response.statusCode == 200) {
         var decodeJson = jsonDecode(response.body);
-        decodeJson.forEach((item) {
-          print(item);
-          listCases.add(Cases.fromJson(item));
-        });
+        decodeJson.forEach((item) => listCases.add(Cases.fromJson(item)));
         return listCases;
       } else {
         print("Erro ao carregar a lista " + response.statusCode.toString());
@@ -35,10 +32,7 @@ class CasesRepository implements ICasesRepository {
       final response = await http.get(ApiConstants.casesSuspectedUrl, headers: {'Authorization': ApiConstants.apiToken});
       if (response.statusCode == 200) {
         var decodeJson = jsonDecode(response.body);
-        decodeJson.forEach((item) {
-          print(item);
-          listCasesSuspected.add(CasesSuspected.fromJson(item));
-        });
+        decodeJson.forEach((item) => listCasesSuspected.add(CasesSuspected.fromJson(item)));
         return listCasesSuspected;
       } else {
         print("Erro ao carregar a lista " + response.statusCode.toString());

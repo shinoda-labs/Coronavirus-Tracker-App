@@ -22,6 +22,7 @@ class ColorsConstants{
     primaryColor: lightPrimary,
     accentColor:  lightAccent,
     cursorColor: lightAccent,
+    cardColor: lightPrimary,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
       textTheme: TextTheme(
@@ -44,6 +45,7 @@ class ColorsConstants{
     accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
     cursorColor: darkAccent,
+    cardColor: darkPrimary,
     appBarTheme: AppBarTheme(
       textTheme: TextTheme(
         title: TextStyle(
