@@ -1,0 +1,45 @@
+name: coronavirus_tracker
+description: Coronavirus Tracker
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  flutter_mobx:
+  flutter_staggered_animations: ^0.1.2
+  intl: ^0.15.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  mobx_codegen:
+  build_runner:
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/cases.png
+    - assets/images/cases_suspected.png
+    - assets/images/cases_confirmed.png
+    - assets/images/deaths.png
+    - assets/images/recovered.png
+
+  fonts:
+    - family: Google
+      fonts:
+        - asset: assets/fonts/ProductSans-Regular.ttf
+        - asset: assets/fonts/ProductSans-Bold.ttf
+          weight: 700
+
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
