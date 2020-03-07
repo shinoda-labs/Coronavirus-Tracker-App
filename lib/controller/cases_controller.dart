@@ -23,6 +23,27 @@ abstract class _CasesControllerBase with Store {
   @observable
   ObservableList<CasesConfirmed> listCasesConfirmed;
 
+  @computed
+  bool get isDataCases => listCases.isNotEmpty;
+
+  @computed
+  bool get isDataCasesSuspected => listCasesSuspected.isNotEmpty;
+
+  @computed
+  bool get isDataCasesConfirmed => listCasesConfirmed.isNotEmpty;
+
+  @computed
+  String get getDate => 'Last Update: ${listCases[0].date}';
+
+  @computed
+  int get getDataCases => listCases[0].cases;
+
+  @computed
+  int get getDataCasesSuspected => listCasesSuspected[0].data;
+
+  @computed
+  int get getDataCasesConfirmed => listCasesConfirmed[0].data;
+
   @action
   loadCases() async {
     listCases = ObservableList<Cases>.of(await _casesRepository.getCases());

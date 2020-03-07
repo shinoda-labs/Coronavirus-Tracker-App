@@ -15,6 +15,12 @@ abstract class _DeathControllerBase with Store {
   @observable
   ObservableList<Deaths> listDeaths;
 
+  @computed
+  bool get isDataDeaths => listDeaths.isNotEmpty;
+
+  @computed
+  int get getDataDeaths => listDeaths[0].data;
+
   @action
   loadDeaths() async {
     listDeaths = ObservableList<Deaths>.of(await _deathsRepository.getDeaths());

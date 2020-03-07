@@ -9,6 +9,13 @@ part of 'recovered_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$RecoveredController on _RecoveredControllerBase, Store {
+  Computed<bool> _$isDataRecoveredComputed;
+
+  @override
+  bool get isDataRecovered => (_$isDataRecoveredComputed ??=
+          Computed<bool>(() => super.isDataRecovered))
+      .value;
+
   final _$listRecoveredAtom =
       Atom(name: '_RecoveredControllerBase.listRecovered');
 
@@ -36,7 +43,8 @@ mixin _$RecoveredController on _RecoveredControllerBase, Store {
 
   @override
   String toString() {
-    final string = 'listRecovered: ${listRecovered.toString()}';
+    final string =
+        'listRecovered: ${listRecovered.toString()},isDataRecovered: ${isDataRecovered.toString()}';
     return '{$string}';
   }
 }

@@ -15,6 +15,12 @@ abstract class _RecoveredControllerBase with Store {
   @observable
   ObservableList<Recovered> listRecovered;
 
+  @computed
+  bool get isDataRecovered => listRecovered.isNotEmpty;
+
+  @computed
+  int get getDataRecovered => listRecovered[0].data;
+
   @action
   loadRecovered() async {
     listRecovered = ObservableList<Recovered>.of(await _recoveredRepository.getRecovered());

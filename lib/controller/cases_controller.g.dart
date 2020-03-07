@@ -9,6 +9,47 @@ part of 'cases_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$CasesController on _CasesControllerBase, Store {
+  Computed<bool> _$isDataCasesComputed;
+
+  @override
+  bool get isDataCases =>
+      (_$isDataCasesComputed ??= Computed<bool>(() => super.isDataCases)).value;
+  Computed<bool> _$isDataCasesSuspectedComputed;
+
+  @override
+  bool get isDataCasesSuspected => (_$isDataCasesSuspectedComputed ??=
+          Computed<bool>(() => super.isDataCasesSuspected))
+      .value;
+  Computed<bool> _$isDataCasesConfirmedComputed;
+
+  @override
+  bool get isDataCasesConfirmed => (_$isDataCasesConfirmedComputed ??=
+          Computed<bool>(() => super.isDataCasesConfirmed))
+      .value;
+  Computed<String> _$getDateComputed;
+
+  @override
+  String get getDate =>
+      (_$getDateComputed ??= Computed<String>(() => super.getDate)).value;
+  Computed<int> _$getDataCasesComputed;
+
+  @override
+  int get getDataCases =>
+      (_$getDataCasesComputed ??= Computed<int>(() => super.getDataCases))
+          .value;
+  Computed<int> _$getDataCasesSuspectedComputed;
+
+  @override
+  int get getDataCasesSuspected => (_$getDataCasesSuspectedComputed ??=
+          Computed<int>(() => super.getDataCasesSuspected))
+      .value;
+  Computed<int> _$getDataCasesConfirmedComputed;
+
+  @override
+  int get getDataCasesConfirmed => (_$getDataCasesConfirmedComputed ??=
+          Computed<int>(() => super.getDataCasesConfirmed))
+      .value;
+
   final _$listCasesAtom = Atom(name: '_CasesControllerBase.listCases');
 
   @override
@@ -90,7 +131,7 @@ mixin _$CasesController on _CasesControllerBase, Store {
   @override
   String toString() {
     final string =
-        'listCases: ${listCases.toString()},listCasesSuspected: ${listCasesSuspected.toString()},listCasesConfirmed: ${listCasesConfirmed.toString()}';
+        'listCases: ${listCases.toString()},listCasesSuspected: ${listCasesSuspected.toString()},listCasesConfirmed: ${listCasesConfirmed.toString()},isDataCases: ${isDataCases.toString()},isDataCasesSuspected: ${isDataCasesSuspected.toString()},isDataCasesConfirmed: ${isDataCasesConfirmed.toString()},getDate: ${getDate.toString()},getDataCases: ${getDataCases.toString()},getDataCasesSuspected: ${getDataCasesSuspected.toString()},getDataCasesConfirmed: ${getDataCasesConfirmed.toString()}';
     return '{$string}';
   }
 }

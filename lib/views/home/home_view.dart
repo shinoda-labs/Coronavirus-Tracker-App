@@ -2,6 +2,7 @@ import 'package:coronavirus_tracker/controller/cases_controller.dart';
 import 'package:coronavirus_tracker/controller/deaths_controller.dart';
 import 'package:coronavirus_tracker/controller/recovered_controller.dart';
 import 'package:coronavirus_tracker/shared/color_constants.dart';
+import 'package:coronavirus_tracker/shared/image_constants.dart';
 import 'package:coronavirus_tracker/views/home/components/shimmer_tile_info.dart';
 import 'package:coronavirus_tracker/views/home/components/tile_info.dart';
 import 'package:flutter/material.dart';
@@ -50,8 +51,8 @@ class _HomeViewState extends State<HomeView> {
                 name: 'LastUpdate',
                 builder: (BuildContext context) {
                   return Text(
-                      _casesController.listCases != null
-                          ? _casesController.listCases[0].date
+                      _casesController.isDataCases
+                          ? _casesController.getDate
                           : 'Loading ...',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontFamily: 'Google'));
@@ -60,60 +61,60 @@ class _HomeViewState extends State<HomeView> {
               Observer(
                 name: 'Cases',
                 builder: (BuildContext context) {
-                  return _casesController.listCases != null
+                  return _casesController.isDataCases
                       ? TileInfo(
                           color: ColorsConstants.casesColor,
                           title: 'Cases',
-                          image: 'assets/images/cases.png',
-                          number: _casesController.listCases[0].cases)
+                          image: ImageConstants.caseImage,
+                          number: _casesController.getDataCases)
                       : ShimmerTileInfo();
                 },
               ),
               Observer(
                 name: 'CasesSuspected',
                 builder: (BuildContext context) {
-                  return _casesController.listCasesSuspected != null
+                  return _casesController.isDataCasesSuspected
                       ? TileInfo(
                           color: ColorsConstants.casesSuspectColor,
                           title: 'Suspected Cases',
-                          image: 'assets/images/cases_suspected.png',
-                          number: _casesController.listCasesSuspected[0].data)
+                          image: ImageConstants.caseSuspectImage,
+                          number: _casesController.getDataCasesSuspected)
                       : ShimmerTileInfo();
                 },
               ),
               Observer(
                 name: 'CasesConfirmed',
                 builder: (BuildContext context) {
-                  return _casesController.listCasesConfirmed != null
+                  return _casesController.isDataCasesConfirmed
                       ? TileInfo(
                           color: ColorsConstants.casesConfirmedColor,
                           title: 'Confirmed Cases',
-                          image: 'assets/images/cases_confirmed.png',
-                          number: _casesController.listCasesConfirmed[0].data)
+                          image: ImageConstants.caseConfirmedImage,
+                          number: _casesController.getDataCasesConfirmed)
                       : ShimmerTileInfo();
                 },
               ),
               Observer(
                 name: 'Deaths',
                 builder: (BuildContext context) {
-                  return _deathController.listDeaths != null
+                  return _deathController.isDataDeaths
                       ? TileInfo(
                           color: ColorsConstants.deathsColor,
                           title: 'Deaths',
-                          image: 'assets/images/deaths.png',
-                          number: _deathController.listDeaths[0].data)
+                          image: ImageConstants.deathsImage,
+                          number: _deathController.getDataDeaths)
                       : ShimmerTileInfo();
                 },
               ),
               Observer(
                 name: 'Recovered',
                 builder: (BuildContext context) {
-                  return _recoveredController.listRecovered != null
+                  return _recoveredController.isDataRecovered
                       ? TileInfo(
                           color: ColorsConstants.recoveredColor,
                           title: 'Recovered',
-                          image: 'assets/images/recovered.png',
-                          number: _recoveredController.listRecovered[0].data)
+                          image: ImageConstants.recoveredImages,
+                          number: _recoveredController.getDataRecovered)
                       : ShimmerTileInfo();
                 },
               )
