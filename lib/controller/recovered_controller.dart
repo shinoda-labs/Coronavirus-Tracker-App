@@ -16,7 +16,7 @@ abstract class _RecoveredControllerBase with Store {
   ObservableList<Recovered> listRecovered;
 
   @computed
-  bool get isDataRecovered => listRecovered.isNotEmpty;
+  bool get isDataRecovered => listRecovered != null;
 
   @computed
   int get getDataRecovered => listRecovered[0].data;

@@ -35,19 +35,24 @@ class _TileInfoState extends State<TileInfo> {
             Text(widget.title,
                 textAlign: TextAlign.start,
                 style: TextStyle(
-                    fontFamily: 'Google', color: widget.color, fontSize: 20.0, fontWeight: FontWeight.bold)),
+                    fontFamily: 'Google',
+                    color: widget.color,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Container(
-                  width: 50.0,
-                  height: 50.0,
-                  child: Image.asset(widget.image)
-                ),
+                    width: 50.0,
+                    height: 50.0,
+                    child: Image.asset(widget.image)),
                 Text(widget.number.toString(),
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                    fontFamily: 'Google', color: widget.color, fontSize: 20.0, fontWeight: FontWeight.bold)),
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                        fontFamily: 'Google',
+                        color: widget.color,
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold)),
               ],
             )
           ],

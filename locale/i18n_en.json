@@ -1,0 +1,8 @@
+{
+    "title": "Coronavirus Tracker",
+    "cases": "Cases",
+    "suspected_cases": "Suspected Cases",
+    "confirmed_cases": "Confirmed Cases",
+    "deaths": "Deaths",
+    "recovereds": "Recovereds"
+}

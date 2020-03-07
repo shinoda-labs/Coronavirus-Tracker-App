@@ -15,6 +15,12 @@ mixin _$DeathController on _DeathControllerBase, Store {
   bool get isDataDeaths =>
       (_$isDataDeathsComputed ??= Computed<bool>(() => super.isDataDeaths))
           .value;
+  Computed<int> _$getDataDeathsComputed;
+
+  @override
+  int get getDataDeaths =>
+      (_$getDataDeathsComputed ??= Computed<int>(() => super.getDataDeaths))
+          .value;
 
   final _$listDeathsAtom = Atom(name: '_DeathControllerBase.listDeaths');
 
@@ -43,7 +49,7 @@ mixin _$DeathController on _DeathControllerBase, Store {
   @override
   String toString() {
     final string =
-        'listDeaths: ${listDeaths.toString()},isDataDeaths: ${isDataDeaths.toString()}';
+        'listDeaths: ${listDeaths.toString()},isDataDeaths: ${isDataDeaths.toString()},getDataDeaths: ${getDataDeaths.toString()}';
     return '{$string}';
   }
 }

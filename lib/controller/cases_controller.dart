@@ -24,13 +24,13 @@ abstract class _CasesControllerBase with Store {
   ObservableList<CasesConfirmed> listCasesConfirmed;
 
   @computed
-  bool get isDataCases => listCases.isNotEmpty;
+  bool get isDataCases => listCases != null;
 
   @computed
-  bool get isDataCasesSuspected => listCasesSuspected.isNotEmpty;
+  bool get isDataCasesSuspected => listCasesSuspected != null;
 
   @computed
-  bool get isDataCasesConfirmed => listCasesConfirmed.isNotEmpty;
+  bool get isDataCasesConfirmed => listCasesConfirmed != null;
 
   @computed
   String get getDate => 'Last Update: ${listCases[0].date}';

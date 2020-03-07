@@ -15,6 +15,12 @@ mixin _$RecoveredController on _RecoveredControllerBase, Store {
   bool get isDataRecovered => (_$isDataRecoveredComputed ??=
           Computed<bool>(() => super.isDataRecovered))
       .value;
+  Computed<int> _$getDataRecoveredComputed;
+
+  @override
+  int get getDataRecovered => (_$getDataRecoveredComputed ??=
+          Computed<int>(() => super.getDataRecovered))
+      .value;
 
   final _$listRecoveredAtom =
       Atom(name: '_RecoveredControllerBase.listRecovered');
@@ -44,7 +50,7 @@ mixin _$RecoveredController on _RecoveredControllerBase, Store {
   @override
   String toString() {
     final string =
-        'listRecovered: ${listRecovered.toString()},isDataRecovered: ${isDataRecovered.toString()}';
+        'listRecovered: ${listRecovered.toString()},isDataRecovered: ${isDataRecovered.toString()},getDataRecovered: ${getDataRecovered.toString()}';
     return '{$string}';
   }
 }

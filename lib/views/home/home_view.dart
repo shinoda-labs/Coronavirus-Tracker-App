@@ -3,6 +3,7 @@ import 'package:coronavirus_tracker/controller/deaths_controller.dart';
 import 'package:coronavirus_tracker/controller/recovered_controller.dart';
 import 'package:coronavirus_tracker/shared/color_constants.dart';
 import 'package:coronavirus_tracker/shared/image_constants.dart';
+import 'package:coronavirus_tracker/views/home/components/shimmer_component.dart';
 import 'package:coronavirus_tracker/views/home/components/shimmer_tile_info.dart';
 import 'package:coronavirus_tracker/views/home/components/tile_info.dart';
 import 'package:flutter/material.dart';
@@ -45,18 +46,21 @@ class _HomeViewState extends State<HomeView> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Observer(
-                name: 'LastUpdate',
-                builder: (BuildContext context) {
-                  return Text(
-                      _casesController.isDataCases
-                          ? _casesController.getDate
-                          : 'Loading ...',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontFamily: 'Google'));
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Observer(
+                  name: 'LastUpdate',
+                  builder: (BuildContext context) {
+                    return _casesController.isDataCases
+                        ? Text(_casesController.getDate,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontFamily: 'Google'))
+                        : ShimmerComponent(
+                            height: 25.0,
+                            width: MediaQuery.of(context).size.width / 1.5);
+                  },
+                ),
               ),
               Observer(
                 name: 'Cases',

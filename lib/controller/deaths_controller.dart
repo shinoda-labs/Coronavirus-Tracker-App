@@ -16,7 +16,7 @@ abstract class _DeathControllerBase with Store {
   ObservableList<Deaths> listDeaths;
 
   @computed
-  bool get isDataDeaths => listDeaths.isNotEmpty;
+  bool get isDataDeaths => listDeaths != null;
 
   @computed
   int get getDataDeaths => listDeaths[0].data;

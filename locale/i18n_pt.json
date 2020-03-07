@@ -1,0 +1,8 @@
+{
+    "title": "Rastreador do Coronavírus",
+    "cases": "Casos",
+    "suspected_cases": "Casos Suspeitos",
+    "confirmed_cases": "Casos Confirmados",
+    "deaths": "Mortes",
+    "recovereds": "Recuperados"
+}
