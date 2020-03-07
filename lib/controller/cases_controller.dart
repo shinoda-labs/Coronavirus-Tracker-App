@@ -1,4 +1,5 @@
 import 'package:coronavirus_tracker/models/cases.dart';
+import 'package:coronavirus_tracker/models/cases_confirmed.dart';
 import 'package:coronavirus_tracker/models/cases_suspected.dart';
 import 'package:coronavirus_tracker/repositories/cases_repository.dart';
 import 'package:mobx/mobx.dart';
@@ -19,6 +20,9 @@ abstract class _CasesControllerBase with Store {
   @observable
   ObservableList<CasesSuspected> listCasesSuspected;
 
+  @observable
+  ObservableList<CasesConfirmed> listCasesConfirmed;
+
   @action
   loadCases() async {
     listCases = ObservableList<Cases>.of(await _casesRepository.getCases());
@@ -27,5 +31,10 @@ abstract class _CasesControllerBase with Store {
   @action
   loadCasesSuspected() async {
     listCasesSuspected = ObservableList<CasesSuspected>.of(await _casesRepository.getCasesSuspected());
+  }
+
+  @action
+  loadCasesConfirmed() async {
+    listCasesConfirmed = ObservableList<CasesConfirmed>.of(await _casesRepository.getCasesConfirmed());
   }
 }
