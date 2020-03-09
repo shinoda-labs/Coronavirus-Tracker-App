@@ -1,7 +1,7 @@
 name: coronavirus_tracker
 description: Coronavirus Tracker
 
-version: 1.0.0+3
+version: 1.0.1+4
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
